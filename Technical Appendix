@@ -1,0 +1,126 @@
+## Technical Appendix
+Customer Nulls
+SELECT 
+    COUNT(*) AS total_rows,
+    SUM(CASE WHEN customerNumber IS NULL THEN 1 ELSE 0 END) AS null_customerNumber,
+    SUM(CASE WHEN customerName IS NULL THEN 1 ELSE 0 END) AS null_customerName, 
+    SUM(CASE WHEN contactLastName IS NULL THEN 1 ELSE 0 END) AS null_contactLastName, 
+    SUM(CASE WHEN contactFirstName IS NULL THEN 1 ELSE 0 END) AS null_contactFirstName, 
+    SUM(CASE WHEN phone IS NULL THEN 1 ELSE 0 END) AS null_phone, 
+    SUM(CASE WHEN addressLine1 IS NULL THEN 1 ELSE 0 END) AS null_addressLine1, 
+    SUM(CASE WHEN addressLine2 IS NULL THEN 1 ELSE 0 END) AS null_addressLine2, 
+    SUM(CASE WHEN city IS NULL THEN 1 ELSE 0 END) AS null_city, 
+    SUM(CASE WHEN postalCode IS NULL THEN 1 ELSE 0 END) AS null_postalCode, 
+    SUM(CASE WHEN country IS NULL THEN 1 ELSE 0 END) AS null_country, 
+    SUM(CASE WHEN salesRepEmployeeNumber IS NULL THEN 1 ELSE 0 END) AS null_salesRepEmployeeNumber, 
+    SUM(CASE WHEN creditLimit IS NULL THEN 1 ELSE 0 END) AS null_creditLimit
+FROM
+	mintclassics.customers;
+Employees Nulls
+SELECT
+    COUNT(*) AS total_rows,
+    SUM(CASE WHEN employeeNumber IS NULL THEN 1 ELSE 0 END) AS null_employeeNumber,
+    SUM(CASE WHEN lastName IS NULL THEN 1 ELSE 0 END) AS null_lastName, 
+    SUM(CASE WHEN firstName IS NULL THEN 1 ELSE 0 END) AS null_firstName, 
+    SUM(CASE WHEN extension IS NULL THEN 1 ELSE 0 END) AS null_extension, 
+    SUM(CASE WHEN email IS NULL THEN 1 ELSE 0 END) AS null_email, 
+    SUM(CASE WHEN officeCode IS NULL THEN 1 ELSE 0 END) AS officeCode, 
+    SUM(CASE WHEN reportsTo IS NULL THEN 1 ELSE 0 END) AS null_reportsTo, 
+    SUM(CASE WHEN jobTitle IS NULL THEN 1 ELSE 0 END) AS null_jobTitle
+FROM mintclassics.employees;
+Offices Nulls
+SELECT
+    COUNT(*) AS total_rows,
+    SUM(CASE WHEN officeCode IS NULL THEN 1 ELSE 0 END) AS null_officeCode,
+    SUM(CASE WHEN city IS NULL THEN 1 ELSE 0 END) AS null_city, 
+    SUM(CASE WHEN phone IS NULL THEN 1 ELSE 0 END) AS null_phone, 
+	SUM(CASE WHEN addressLine1 IS NULL THEN 1 ELSE 0 END) AS null_addressLine1, 
+    SUM(CASE WHEN addressLine2 IS NULL THEN 1 ELSE 0 END) AS null_addressLine2, 
+    SUM(CASE WHEN state IS NULL THEN 1 ELSE 0 END) AS null_state, 
+	SUM(CASE WHEN country IS NULL THEN 1 ELSE 0 END) AS null_country, 
+	SUM(CASE WHEN postalCode IS NULL THEN 1 ELSE 0 END) AS null_postalCode, 
+    SUM(CASE WHEN territory IS NULL THEN 1 ELSE 0 END) AS null_territory
+FROM
+	mintclassics.offices;
+Order Details Nulls
+SELECT 
+    COUNT(*) AS total_rows,
+    SUM(CASE WHEN orderNumber IS NULL THEN 1 ELSE 0 END) AS null_orderNumber,
+    SUM(CASE WHEN productCode IS NULL THEN 1 ELSE 0 END) AS null_productCode, 
+    SUM(CASE WHEN quantityOrdered IS NULL THEN 1 ELSE 0 END) AS null_quantityOrdered, 
+    SUM(CASE WHEN priceEach IS NULL THEN 1 ELSE 0 END) AS null_prideEach, 
+    SUM(CASE WHEN orderNumber IS NULL THEN 1 ELSE 0 END) AS null_orderLineNumber
+FROM
+	mintclassics.orderdetails;
+Orders Nulls
+SELECT 
+    COUNT(*) AS total_rows,
+    SUM(CASE WHEN orderNumber IS NULL THEN 1 ELSE 0 END) AS null_orderNumber,
+    SUM(CASE WHEN orderDate IS NULL THEN 1 ELSE 0 END) AS null_orderDate, 
+    SUM(CASE WHEN requiredDate IS NULL THEN 1 ELSE 0 END) AS null_requiredDate, 
+    SUM(CASE WHEN shippedDate IS NULL THEN 1 ELSE 0 END) AS null_shippedDate, 
+    SUM(CASE WHEN status IS NULL THEN 1 ELSE 0 END) AS null_status, 
+    SUM(CASE WHEN comments IS NULL THEN 1 ELSE 0 END) AS null_comments, 
+    SUM(CASE WHEN customerNumber IS NULL THEN 1 ELSE 0 END) AS null_customerNumber
+FROM
+	mintclassics.orders;
+Payments Nulls
+SELECT 
+    COUNT(*) AS total_rows,
+    SUM(CASE WHEN customerNumber IS NULL THEN 1 ELSE 0 END) AS null_customerNumber,
+    SUM(CASE WHEN checkNumber IS NULL THEN 1 ELSE 0 END) AS null_checkNumber, 
+    SUM(CASE WHEN paymentDate IS NULL THEN 1 ELSE 0 END) AS null_paymentDate, 
+    SUM(CASE WHEN amount IS NULL THEN 1 ELSE 0 END) AS null_amount
+FROM
+	mintclassics.payments;
+Product Lines Nulls
+SELECT 
+    COUNT(*) AS total_rows,
+    SUM(CASE WHEN productLine IS NULL THEN 1 ELSE 0 END) AS null_productLine,
+    SUM(CASE WHEN textDescription IS NULL THEN 1 ELSE 0 END) AS null_textDescription, 
+    SUM(CASE WHEN htmlDescription IS NULL THEN 1 ELSE 0 END) AS null_htmlDescription, 
+    SUM(CASE WHEN image IS NULL THEN 1 ELSE 0 END) AS null_image
+FROM
+	mintclassics.productlines;
+Products Nulls
+SELECT 
+    COUNT(*) AS total_rows,
+    SUM(CASE WHEN productCode IS NULL THEN 1 ELSE 0 END) AS null_productCode,
+    SUM(CASE WHEN productName IS NULL THEN 1 ELSE 0 END) AS null_productName, 
+    SUM(CASE WHEN productLine IS NULL THEN 1 ELSE 0 END) AS null_productLine, 
+    SUM(CASE WHEN productScale IS NULL THEN 1 ELSE 0 END) AS null_productScale, 
+    SUM(CASE WHEN productVendor IS NULL THEN 1 ELSE 0 END) AS null_productVendor, 
+    SUM(CASE WHEN productDescription IS NULL THEN 1 ELSE 0 END) AS productDescription, 
+    SUM(CASE WHEN quantityInStock IS NULL THEN 1 ELSE 0 END) AS null_quantityInStock, 
+    SUM(CASE WHEN warehouseCode IS NULL THEN 1 ELSE 0 END) AS null_warehouseCode, 
+    SUM(CASE WHEN buyPrice IS NULL THEN 1 ELSE 0 END) AS null_buyPrice, 
+    SUM(CASE WHEN MSRP IS NULL THEN 1 ELSE 0 END) AS null_MSRP
+FROM
+	mintclassics.products;
+Warehouses Nulls
+SELECT 
+    COUNT(*) AS total_rows,
+    SUM(CASE WHEN warehouseCode IS NULL THEN 1 ELSE 0 END) AS null_warehouseCode,
+    SUM(CASE WHEN warehouseName IS NULL THEN 1 ELSE 0 END) AS null_warehouseName, 
+    SUM(CASE WHEN warehousePctCap IS NULL THEN 1 ELSE 0 END) AS null_warehousePctCap
+FROM
+	mintclassics.warehouses;
+Stock By Warehouse Name
+SELECT
+	SUM(quantityInStock) AS stock, warehouseName
+FROM
+	mintclassics.products
+LEFT JOIN
+	mintclassics.warehouses ON products.warehouseCode = warehouses.warehouseCode
+GROUP BY
+	warehouseName
+Excess Stock By Product Name
+SELECT 
+    DISTINCT productName, SUM(quantityOrdered) AS total, quantityInStock, 
+    (quantityInStock - SUM(quantityOrdered)) AS excess, 
+    (SUM(quantityOrdered) / quantityInStock) AS turnover
+FROM
+    mintclassics.orderdetails
+LEfT JOIN
+	mintclassics.products ON products.productCode = orderdetails.productCode
+GROUP BY
