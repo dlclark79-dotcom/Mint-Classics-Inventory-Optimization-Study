@@ -30,21 +30,7 @@ The answers to questions like those should help you to formulate suggestions and
 ## Cleaning
 Table relationships were mapped by creating a new EER diagram (Figure 1). Scripts were then run in MySQL Workbench to check each table for nulls. It looks as though the Nulls do not affect any of the fields needed for this analysis, so no additional measures were taken. However, this should be remembered for future analyses. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+![EER](https://github.com/dlclark79-dotcom/Mint-Classics-Inventory-Optimization-Study%20Mint Classics EER.png)  
 Figure 1.  
 
 
