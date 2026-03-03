@@ -30,7 +30,7 @@ The answers to questions like those should help you to formulate suggestions and
 ## Cleaning
 Table relationships were mapped by creating a new EER diagram (Figure 1). Scripts were then run in MySQL Workbench to check each table for nulls. It looks as though the Nulls do not affect any of the fields needed for this analysis, so no additional measures were taken. However, this should be remembered for future analyses. 
 
-![EER](https://github.com/dlclark79-dotcom/Mint-Classics-Inventory-Optimization-Study%20Mint Classics EER.png)  
+<img width="993" height="812" alt="Mint Classics EER" src="https://github.com/user-attachments/assets/88d47e31-182b-451b-a299-66f52f18c387" />
 Figure 1.  
 
 
@@ -53,7 +53,7 @@ Find out which products and product lines are stored in each warehouse. The east
 
 2) How are inventory numbers related to sales figures? Do the inventory counts seem appropriate for each item? 
 
-
+![Inventory and Orders](https://github.com/user-attachments/assets/c939f8fa-c293-4d14-8539-3066fb76b68b)
 Figure 2.  
 
 The stock of each item was compared with  its sales. After summing quantityOrdered, grouped by productName it’s clear that for many products stock greatly outweighs sales, resulting in thousands of excess stock sitting in warehouses after sales (Figure 2). The above analysis also reveals some products in which order count exceeds quantity in stock. While this information is not relevant to the current project, it may still be worth noting. 
@@ -191,8 +191,3 @@ FROM
 LEfT JOIN
 	mintclassics.products ON products.productCode = orderdetails.productCode
 GROUP BY
-	productName, quantityInStock
-ORDER BY
-	excess DESC
-
-
