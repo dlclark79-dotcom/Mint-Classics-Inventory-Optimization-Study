@@ -1,4 +1,4 @@
-# Mint Classics Inventory Optimization Study
+# SQL-Driven Warehouse Utilization & Supply Chain Optimization
 # Goal: Identify opportunities to close one warehouse by reducing overstocked inventory.
 ## Project Overview 
 To improve operational efficiency, Mint Classics sought to identify opportunities to close one of its four storage facilities. This analysis utilized MySQL Workbench to evaluate the relationship between inventory levels, warehouse utilization, and sales performance across the company’s entire product line. It was discovered that warehouses have stagnant capital and underutilized capacity, warranting redistribution and liquidation. 
